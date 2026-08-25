@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حامد اختری‌فر | توسعه‌دهنده فرانت‌اند</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-deep: #070b14;
+      --bg-mid: #0e1628;
+      --glass: rgba(18, 28, 48, 0.72);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --text: #eef3ff;
+      --muted: #9aa8c7;
+      --accent: #7c9cff;
+      --accent-2: #c084fc;
+      --cyan: #67e8f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Vazirmatn", system-ui, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(124, 156, 255, 0.28), transparent 55%),
+        radial-gradient(900px 500px at 110% 10%, rgba(192, 132, 252, 0.22), transparent 50%),
+        radial-gradient(700px 400px at 50% 110%, rgba(103, 232, 249, 0.12), transparent 45%),
+        linear-gradient(160deg, var(--bg-deep), var(--bg-mid));
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 32px 20px;
+      overflow-x: hidden;
+    }
+
+    .glow {
+      position: fixed;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.35;
+      pointer-events: none;
+      animation: drift 14s ease-in-out infinite;
+    }
+
+    .glow-a {
+      background: #7c9cff;
+      top: 12%;
+      right: 8%;
+    }
+
+    .glow-b {
+      background: #c084fc;
+      bottom: 8%;
+      left: 10%;
+      animation-delay: -6s;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-24px, 18px) scale(1.08); }
+    }
+
+    .card {
+      position: relative;
+      width: min(440px, 100%);
+      padding: 40px 36px 32px;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      backdrop-filter: blur(22px);
+      box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 42%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(124, 156, 255, 0.12);
+      border: 1px solid rgba(124, 156, 255, 0.28);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 10px var(--cyan);
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0b1020;
+      background: linear-gradient(145deg, #9db4ff, #d4b4ff 55%, #7ce7f8);
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(124, 156, 255, 0.28);
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      color: var(--accent);
+      font-size: 0.98rem;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 18px;
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #8ba4ff, #b794f6);
+      color: #0b1020;
+      font-family: inherit;
+      font-size: 0.98rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(139, 164, 255, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .github-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 16px 34px rgba(139, 164, 255, 0.38);
+    }
+
+    .github-btn:active {
+      transform: translateY(0);
+    }
+
+    .github-btn svg {
+      flex-shrink: 0;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #7d8bab;
+      font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow glow-a" aria-hidden="true"></div>
+  <div class="glow glow-b" aria-hidden="true"></div>
+
+  <article class="card">
+    <div class="badge">
+      <span class="dot"></span>
+      در دسترس برای همکاری
+    </div>
+
+    <div class="avatar" aria-hidden="true">حا</div>
+
+    <h1>حامد اختری‌فر</h1>
+    <div class="role">توسعه‌دهنده فرانت‌اند · React</div>
+
+    <p>
+      پیش‌زمینه گرافیکی‌ام باعث شده رابط‌های کاربری را فقط به‌عنوان کد نبینم؛
+      هر فاصله، رنگ و حرکت برایم جزئی از تجربه کاربر است. روی جزئیات بصری حساس هستم
+      و سعی می‌کنم محصولی بسازم که هم دقیق کار کند، هم از نظر زیبایی منسجم باشد.
+    </p>
+
+    <a
+      class="github-btn"
+      href="https://github.com/Hamed-Akhtari"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 10.39.6.11.82-.26.82-.58 0-.28-.01-1.02-.02-2-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.28 0 .32.22.7.83.58A10.99 10.99 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/>
+      </svg>
+      مشاهده گیت‌هاب
+    </a>
+
+    <div class="meta">
+      <span>طراحی رابط · دقت بصری</span>
+      <span>React · UI</span>
+    </div>
+  </article>
+</body>
+</html>
